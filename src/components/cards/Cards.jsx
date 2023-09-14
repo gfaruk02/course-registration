@@ -6,7 +6,9 @@ import { useState } from "react";
 
 const Cards = () => {
  const [allCourse, setAllCourse] = useState([])
- const [cardSelect, setCardSelect]=useState([])
+ const [selectedCard, setSelectCard]=useState([])
+ const [totalCredit, setTotalCredit] = useState([0]);
+
 
     useEffect(()=>{
         fetch("./Data.json")
@@ -15,7 +17,33 @@ const Cards = () => {
 
     });
         const handleSelect = (card)=>{
-            setCardSelect([...cardSelect, card])
+
+            const inExist = selectedCard.find(cardItem => cardItem.id == card.id);
+            let newCredit = card.credit;
+            if(inExist){
+              return  alert("This Card Already Selected");
+            }
+            else{
+                selectedCard.forEach(item=>{
+                    // count = count + item.salary;
+                    newCredit += item.credit;
+                });
+                
+               
+                if(newCredit > 20){
+                  return  alert('Your lemit is complete')
+                }else{
+                    setTotalCredit(newCredit);
+                  
+            
+                    setSelectCard([...selectedCard, card]);
+                }
+               
+            }
+            // else{
+            //     setSelectCard([...selectedCard, card]);
+            // }
+            
             // console.log(id);
         }
     
@@ -29,7 +57,10 @@ const Cards = () => {
                 > </Card>
             </div>
             <div className="cart-container">
-                <Cart cardSelect={cardSelect}> </Cart>
+                <Cart selectedCard={selectedCard}
+                    totalCredit={totalCredit}
+                   
+                > </Cart>
             </div>
            </div>
         </div>
