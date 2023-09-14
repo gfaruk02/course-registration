@@ -17,7 +17,7 @@ const Cards = () => {
     
     return (
         <div>
-           <div className="container grid grid-cols-1 md:grid-cols-2 gap-5">
+           <div className="container flex gap-5">
             <div className="card-container">
                 <Card allCourse={allCourse}> </Card>
             </div>
