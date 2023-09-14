@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-const Cart = ({selectedCard, totalCredit}) => {
+const Cart = ({selectedCard, totalCredit, remaining}) => {
     return (
         <div>
             <div className="right">
             <div  className="cart-content"> 
-                    <h1>Credit Hour Remaining : </h1>
+                    <h2>Credit Hour Remaining : {remaining} </h2>
                     <hr />
                     <h1>Course Name : </h1>
                 {   
@@ -38,6 +38,7 @@ const Cart = ({selectedCard, totalCredit}) => {
 };
 Cart.propTypes = {
     selectedCard: PropTypes.array,
-    totalCredit: PropTypes.number
+    totalCredit: PropTypes.number,
+    remaining: PropTypes.number
 }
 export default Cart;

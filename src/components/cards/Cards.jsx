@@ -7,7 +7,8 @@ import { useState } from "react";
 const Cards = () => {
  const [allCourse, setAllCourse] = useState([])
  const [selectedCard, setSelectCard]=useState([])
- const [totalCredit, setTotalCredit] = useState([0]);
+ const [totalCredit, setTotalCredit] = useState(0);
+ const [remaining, setRemaining] = useState(0);
 
 
     useEffect(()=>{
@@ -21,22 +22,30 @@ const Cards = () => {
             const inExist = selectedCard.find(cardItem => cardItem.id == card.id);
             let newCredit = card.credit;
             if(inExist){
-              return  alert("This Card Already Selected");
+              return  alert("You've already selected in this course.");
             }
             else{
                 selectedCard.forEach(item=>{
                     // count = count + item.salary;
                     newCredit += item.credit;
                 });
-                
+                const totalRemainng = 20 - newCredit;
                
                 if(newCredit > 20){
-                  return  alert('Your lemit is complete')
+                  return  alert('Your course credit limit has been reached.')
                 }else{
                     setTotalCredit(newCredit);
-                  
+                    setRemaining(totalRemainng);
             
                     setSelectCard([...selectedCard, card]);
+                //    if(totalRemainng < 0 && totalRemainng == 0){
+                //     return  alert('Your totalRemainng is Zero')
+                //    }else{
+                //     setTotalCredit(newCredit);
+                //     setRemaining(totalRemainng);
+            
+                //     setSelectCard([...selectedCard, card]);
+                //    }
                 }
                
             }
@@ -59,7 +68,7 @@ const Cards = () => {
             <div className="cart-container">
                 <Cart selectedCard={selectedCard}
                     totalCredit={totalCredit}
-                   
+                    remaining={remaining}
                 > </Cart>
             </div>
            </div>
