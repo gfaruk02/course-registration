@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-const Card = ({allCourse}) => {
+const Card = ({allCourse, handleSelect}) => {
     return (
         <div className='cards grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {
@@ -14,7 +14,7 @@ const Card = ({allCourse}) => {
                             <p> Price : {card.price}</p>
                             <p> Credit :  {card.credit}hr</p>
                         </div>
-                        <button className='card-btn'>Select</button>
+                        <button onClick={()=>handleSelect(card)} className='card-btn'>Select</button>
                     </div>
                 ))
             };
@@ -23,6 +23,7 @@ const Card = ({allCourse}) => {
     );
 };
 Card.propTypes = {
-    allCourse: PropTypes.array  
+    allCourse: PropTypes.array,
+    handleSelect: PropTypes.func
 }
 export default Card;

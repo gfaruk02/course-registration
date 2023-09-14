@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Cards = () => {
  const [allCourse, setAllCourse] = useState([])
+ const [cardSelect, setCardSelect]=useState([])
 
     useEffect(()=>{
         fetch("./Data.json")
@@ -13,16 +14,22 @@ const Cards = () => {
         .then(data=>setAllCourse(data))
 
     });
-        
+        const handleSelect = (card)=>{
+            setCardSelect([...cardSelect, card])
+            // console.log(id);
+        }
     
     return (
         <div>
            <div className="container flex gap-5">
             <div className="card-container">
-                <Card allCourse={allCourse}> </Card>
+                <Card 
+                allCourse={allCourse}
+                handleSelect={handleSelect}
+                > </Card>
             </div>
             <div className="cart-container">
-                <Cart> </Cart>
+                <Cart cardSelect={cardSelect}> </Cart>
             </div>
            </div>
         </div>
