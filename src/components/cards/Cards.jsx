@@ -64,7 +64,7 @@ const Cards = () => {
     
     return (
         <div>
-           <div className="container flex gap-5">
+           <div className="container flex flex-wrap-reverse gap-5">
             <div className="card-container">
                 <Card 
                 allCourse = {allCourse}
