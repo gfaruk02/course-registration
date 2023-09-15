@@ -14,7 +14,7 @@ const Cart = ({selectedCard, totalCredit, remaining, totalCost}) => {
                     <div className='pl-3' key={card.id}>
                         
                         <ol >
-                        <li className='list-decimal'> {card.course_name} </li>
+                        <li style={{listStyleType: "decimal"}} > {card.course_name} </li>
                         </ol>
                     </div>
                        

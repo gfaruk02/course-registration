@@ -16,7 +16,7 @@ const Card = ({allCourse, handleSelect}) => {
                         <div className='flex'><span className=' text-lg pr-1'><FaDollarSign /></span>  <p>Price : {card.price}</p></div>
                         <div className='flex'><span className=' text-lg pr-1'><FaBookOpen /></span>    <p> Credit :  {card.credit}hr</p></div>
                         </div>
-                        <button onClick={()=>handleSelect(card)} className='card-btn'>Select</button>
+                        <button onClick={() => handleSelect(card)} className='card-btn'>Select</button>
                     </div>
                 ))
             };

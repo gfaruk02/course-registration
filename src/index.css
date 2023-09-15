@@ -78,6 +78,9 @@ body{
   font-size: 20px;
   font-weight: 700;
 }
+/* .cart-content ol{
+  list-style-type: decimal;
+} */
 .cart-content li{
   padding-bottom: 4px;
   color: rgba(22, 22, 22, 0.6);
