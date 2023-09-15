@@ -9,7 +9,7 @@ const Cards = () => {
  const [selectedCard, setSelectCard]=useState([])
  const [totalCredit, setTotalCredit] = useState(0);
  const [remaining, setRemaining] = useState(0);
-
+ const [totalCost, setTotalCOst] = useState(0);
 
     useEffect(()=>{
         fetch("./Data.json")
@@ -21,6 +21,7 @@ const Cards = () => {
 
             const inExist = selectedCard.find(cardItem => cardItem.id == card.id);
             let newCredit = card.credit;
+            let cost = card.price;
             if(inExist){
               return  alert("You've already selected in this course.");
             }
@@ -28,14 +29,17 @@ const Cards = () => {
                 selectedCard.forEach(item=>{
                     // count = count + item.salary;
                     newCredit += item.credit;
+                    cost=cost+item.price;
                 });
                 const totalRemainng = 20 - newCredit;
                
                 if(newCredit > 20){
                   return  alert('Your course credit limit has been reached.')
                 }else{
+                    
                     setTotalCredit(newCredit);
                     setRemaining(totalRemainng);
+                    setTotalCOst(cost)
             
                     setSelectCard([...selectedCard, card]);
                 //    if(totalRemainng < 0 && totalRemainng == 0){
@@ -69,6 +73,7 @@ const Cards = () => {
                 <Cart selectedCard={selectedCard}
                     totalCredit={totalCredit}
                     remaining={remaining}
+                    totalCost={totalCost}
                 > </Cart>
             </div>
            </div>

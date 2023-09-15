@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
-const Cart = ({selectedCard, totalCredit, remaining}) => {
+const Cart = ({selectedCard, totalCredit, remaining, totalCost}) => {
     return (
         <div>
             <div className="right">
             <div  className="cart-content"> 
                     <h2>Credit Hour Remaining : {remaining} </h2>
                     <hr />
-                    <h1>Course Name : </h1>
+                    <h1>Course Name </h1>
                 {   
                     selectedCard.map((card) => (
                         
                       
-                    <div  key={card.id}>
+                    <div className='pl-3' key={card.id}>
                         
-                        <ol className="order-last">
-                        <li > {card.course_name} </li>
+                        <ol >
+                        <li className='list-decimal'> {card.course_name} </li>
                         </ol>
                     </div>
                        
@@ -25,9 +25,9 @@ const Cart = ({selectedCard, totalCredit, remaining}) => {
                     
                 }
                 <hr />
-                        <h3>Total Credit Hour :{totalCredit}</h3>
+                        <h3>Total Credit Hour : {totalCredit}</h3>
                         <hr />
-                        <h3>Total Price : </h3>
+                        <h3>Total Price : {totalCost} </h3>
                     </div>
                     
                
@@ -39,6 +39,7 @@ const Cart = ({selectedCard, totalCredit, remaining}) => {
 Cart.propTypes = {
     selectedCard: PropTypes.array,
     totalCredit: PropTypes.number,
-    remaining: PropTypes.number
+    remaining: PropTypes.number,
+    totalCost: PropTypes.number
 }
 export default Cart;
