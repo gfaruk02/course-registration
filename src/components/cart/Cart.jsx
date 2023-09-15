@@ -8,19 +8,13 @@ const Cart = ({selectedCard, totalCredit, remaining, totalCost}) => {
                     <hr />
                     <h1>Course Name </h1>
                 {   
-                    selectedCard.map((card) => (
+                    selectedCard.map(( card, idx) => (
+                    <div className='pl-3 ' key={idx}>
                         
-                      
-                    <div className='pl-3' key={card.id}>
-                        
-                        <ol >
-                        <li style={{listStyleType: "decimal"}} > {card.course_name} </li>
+                        <ol>
+                        <li >{idx+1}. {card.course_name} </li>
                         </ol>
-                    </div>
-                       
-                        
-                       
-                       
+                     </div>  
                     )) 
                     
                 }

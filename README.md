@@ -15,5 +15,5 @@ Now i discuss my features working system.
 Questions : 2. Discuss how you managed the state in your assignment project.
 
  Answer 2: Using Local state i managed the state in my assignment project for building dynamic and interactive user interfaces.
- . Component State(useState Hook) : Components car have local state using the "useState" hook. it's manage data in one or another component. Local state working for show or hide a modal component or to track values for a form component. 
- . Props: I can pass data from a parent component to a child component using props. This is a simple way to share data and manage state at a higher level in component hierarchy.
+ 1. Component State(useState Hook) : Components car have local state using the "useState" hook. it's manage data in one or another component. Local state working for show or hide a modal component or to track values for a form component. 
+ 2. Props: I can pass data from a parent component to a child component using props. This is a simple way to share data and manage state at a higher level in component hierarchy.
