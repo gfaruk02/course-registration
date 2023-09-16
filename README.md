@@ -15,5 +15,16 @@ Now i discuss my features working system.
 Questions : 2. Discuss how you managed the state in your assignment project.
 
  Answer 2: Using Local state i managed the state in my assignment project for building dynamic and interactive user interfaces.
- 1. Component State(useState Hook) : Components car have local state using the "useState" hook. it's manage data in one or another component. Local state working for show or hide a modal component or to track values for a form component. 
+ 1. Component State(useState Hook) : Components car have local state using the "useState" hook. it's manage data in one or another component. Local state working for show or hide a modal component or to track values for a form component. My using state as like
+    1. const [allCourse, setAllCourse] = useState([])
+    2. const [selectedCard, setSelectCard] = useState([])
+    3. const [totalCredit, setTotalCredit] = useState(0);
+    4. const [remaining, setRemaining] = useState(0);
+    5. const [totalCost, setTotalCOst] = useState(0);
+
+    It returns an array with two values: the current state and a function to update it. The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called.
+    for example:
+    const [totalCredit, setTotalCredit] = useState(0);
+    Here, the initialValue (useState(0)) is the value my want to start with, and state (totalCredit) is the current state value that can be used in your component. The setState (setTotalCredit) function can be used to update the state, triggering a re-render of your component.
+
  2. Props: I can pass data from a parent component to a child component using props. This is a simple way to share data and manage state at a higher level in component hierarchy.

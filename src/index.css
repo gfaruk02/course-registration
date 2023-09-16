@@ -14,17 +14,7 @@ body{
   color: #1C1B1B;
   
 }
-.cards{
-  /* width: 850px; */
-  /* display: flex;
-  flex-wrap: wrap;
-  height: 320px;
-  gap: 10px; */
-}
 .card-items{
-  /* width: 250px; */
-  /* height: 350px; */
-  /* border: 1px solid #c9c6c6; */
   border-radius:12px;
   background-color: white;
   padding: 10px;
@@ -78,9 +68,6 @@ body{
   font-size: 20px;
   font-weight: 700;
 }
-/* .cart-content ol{
-  list-style-type: decimal;
-} */
 .cart-content li{
   padding-bottom: 4px;
   color: rgba(22, 22, 22, 0.6);

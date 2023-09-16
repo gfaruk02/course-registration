@@ -10,23 +10,18 @@ const Cart = ({selectedCard, totalCredit, remaining, totalCost}) => {
                 {   
                     selectedCard.map(( card, idx) => (
                     <div className='pl-3 ' key={idx}>
-                        
                         <ol>
                         <li >{idx+1}. {card.course_name} </li>
                         </ol>
                      </div>  
                     )) 
-                    
                 }
                 <hr />
                         <h3>Total Credit Hour : {totalCredit}</h3>
                         <hr />
                         <h3>Total Price : {totalCost} </h3>
                     </div>
-                    
-               
             </div>
-            
         </div>
     );
 };

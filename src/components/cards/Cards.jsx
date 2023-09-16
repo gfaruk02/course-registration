@@ -29,7 +29,6 @@ const Cards = () => {
             }
             else{
                 selectedCard.forEach(item => {
-                    // count = count + item.salary;
                     newCredit += item.credit;
                     cost = cost + item.price;
                 });
@@ -44,22 +43,8 @@ const Cards = () => {
                     setTotalCOst(cost)
             
                     setSelectCard([...selectedCard, card]);
-                //    if(totalRemainng < 0 && totalRemainng == 0){
-                //     return  alert('Your totalRemainng is Zero')
-                //    }else{
-                //     setTotalCredit(newCredit);
-                //     setRemaining(totalRemainng);
-            
-                //     setSelectCard([...selectedCard, card]);
-                //    }
-                }
-               
+                }             
             }
-            // else{
-            //     setSelectCard([...selectedCard, card]);
-            // }
-            
-            // console.log(id);
         }
     
     return (

@@ -20,7 +20,6 @@ const Card = ({allCourse, handleSelect}) => {
                     </div>
                 ))
             };
-            {/* <h1>This is my First Card: {allCourse.length}</h1> */}
         </div>
     );
 };
